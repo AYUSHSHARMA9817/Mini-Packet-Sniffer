@@ -23,12 +23,21 @@ Install the required dependencies (Ubuntu/Debian):
 sudo apt update
 sudo apt install build-essential cmake ninja-build qt6-base-dev qt6-base-dev-tools
 ```
-## Steps to run this MINI PACKET ANALYSER:
-```bash
-  1. git clone https://github.com/AYUSHSHARMA9817/Mini-Packet-Sniffer.git
-  2. cd Mini-Packet-Sniffer
-  3. mkdir build && cd build
-  4. cmake -G "Ninja" -DCMAKE_PREFIX_PATH=/usr ..
-  5. ninja
-  6. sudo ./QtPacketSniffer
+## Build Instructions
+Clone the repository and build the project using CMake and Ninja:
+
+``` Bash
+git clone [https://github.com/AYUSHSHARMA9817/Mini-Packet-Sniffer.git](https://github.com/AYUSHSHARMA9817/Mini-Packet-Sniffer.git)
+cd Mini-Packet-Sniffer
+mkdir build && cd build
+cmake -G "Ninja" ..
+ninja
 ```
+## Usage
+Because the application opens raw network sockets, it requires administrator (root) privileges to run.
+``` Bash
+sudo ./QtPacketSniffer
+```
+* Select your network interface (e.g., eth0) from the dropdown.
+* Click Start Capture.
+* Select any packet in the table to view its raw hex dump and ASCII text data.
